@@ -1,7 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: podinfo
+  name: apache
+  namespace: default
 spec:
   ingressClassName: nginx
   rules:
@@ -9,8 +10,8 @@ spec:
       paths:
       - backend:
           service:
-            name: podinfo
-            port: 
-              name: http
+            name: apache
+            port:
+              number: 80
         path: /
         pathType: Prefix
