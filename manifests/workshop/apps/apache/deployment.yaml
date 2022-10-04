@@ -6,7 +6,7 @@ metadata:
   labels:
     app: apache
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: apache
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: apache
-        image: nginx:1.23.1
+        image: httpd:latest
         ports:
         - containerPort: 80
 ---
